@@ -21,6 +21,8 @@ jobs:
         
       - name: Set up QEMU        
         uses: docker/setup-qemu-action@v1
+        with:
+          platforms: arm64
 
       - name: Set up Docker Buildx        
         uses: docker/setup-buildx-action@v1
@@ -49,3 +51,4 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          platforms: linux/arm/v8
