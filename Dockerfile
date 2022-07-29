@@ -10,6 +10,7 @@ RUN curl -sf https://gobinaries.com/tj/node-prune | sh
 
 COPY ui/ .
 
+RUN yarn config set network-timeout 100000
 RUN yarn install --frozen-lockfile
 RUN yarn build
 
